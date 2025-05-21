@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import axios from 'axios';
 
 import Register from './Register';
 import Login from './Login';
@@ -11,6 +10,7 @@ function App() {
 
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     setToken(null);
   };
 
@@ -19,9 +19,10 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setToken={setToken} />} />
-        <Route path="/dashboard" element={
-          token ? <Dashboard token={token} logout={logout} /> : <Navigate to="/login" />
-        } />
+        <Route
+          path="/dashboard"
+          element={token ? <Dashboard token={token} logout={logout} /> : <Navigate to="/login" />}
+        />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>

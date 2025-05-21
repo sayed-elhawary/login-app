@@ -75,6 +75,26 @@ app.get('/api/dashboard', auth, (req, res) => {
   res.json({ msg: `Welcome to your dashboard, user ${req.user.id}` });
 });
 
+// --- إضافة موديل المنتج (Product Model) ---
+const ProductSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
+  imageUrl: { type: String, required: true }
+});
+
+const Product = mongoose.model('Product', ProductSchema);
+
+// API للحصول على قائمة المنتجات - محمي بواسطة auth middleware
+app.get('/api/products', auth, async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json({ products });
+  } catch (err) {
+    console.error('Error fetching products:', err);
+    res.status(500).json({ msg: 'Server error' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
