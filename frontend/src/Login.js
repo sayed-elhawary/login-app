@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -9,7 +9,11 @@ export default function Login({ setToken }) {
   const [msgColor, setMsgColor] = useState('red');
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+  useEffect(() => {
+    console.log("API_URL (from env):", API_URL);
+  }, [API_URL]);
 
   const submitHandler = async e => {
     e.preventDefault();
