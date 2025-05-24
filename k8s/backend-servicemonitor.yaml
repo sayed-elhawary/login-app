@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: backend-servicemonitor
-  namespace: monitoring        # مكان تشغيل Prometheus Operator عادة
+  namespace:       # مكان تشغيل Prometheus Operator عادة
   labels:
     release: prometheus       # لازم يتوافق مع label في Prometheus Operator (تأكد منه)
 spec:
