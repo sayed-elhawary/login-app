@@ -20,6 +20,7 @@ spec:
       containers:
       - name: frontend
         image: sayedkhaledelhawary/mern-shoping
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
