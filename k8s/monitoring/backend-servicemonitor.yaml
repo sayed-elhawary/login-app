@@ -2,17 +2,17 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: backend-servicemonitor
-  namespace: monitoring        # مكان تشغيل Prometheus Operator عادة
+  namespace: monitoring      
   labels:
-    release: prometheus       # لازم يتوافق مع label في Prometheus Operator (تأكد منه)
+    release: prometheus     
 spec:
   selector:
     matchLabels:
-      app: backend            # نفس اللابل في سيرفيس الـ backend
+      app: backend         
   namespaceSelector:
     matchNames:
-      - todo-app              # النيمسبيس اللي فيه تطبيق backend
+      - todo-app              
   endpoints:
-    - port: http              # اسم البورت في الـ Service (اللي حطيناه في الخطوة 1)
+    - port: http             
       interval: 15s
       path: /metrics  
