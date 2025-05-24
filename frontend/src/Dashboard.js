@@ -18,13 +18,7 @@ export default function Dashboard() {
       price: 650,
       image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-max-270-mens-shoes-KkLcGR.png',
     },
-    {
-      _id: '2',
-      name: 'أديداس ألترابوست 22',
-      description: 'حذاء رياضي مميز مع دعم فائق',
-      price: 720,
-      image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-max-270-mens-shoes-KkLcGR.png',
-    },
+
     {
       _id: '3',
       name: 'بوما RS-X³',
