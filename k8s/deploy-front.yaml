@@ -7,8 +7,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1           # عدد البودات الإضافية المؤقتة
-      maxUnavailable: 0     # تأكد إن مفيش بود يقع أثناء التحديث
+      maxSurge: 1          
+      maxUnavailable: 0    
   selector:
     matchLabels:
       app: frontend
