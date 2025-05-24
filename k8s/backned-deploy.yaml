@@ -19,7 +19,7 @@ spec:
         - containerPort: 5000
         env:
         - name: MONGO_URI
-          value: "mongodb://mongo-service:27017/mern-auth-db"  # مثال لو تستخدم MongoDB في نفس الـ cluster
+          value: "mongodb://mongo-service:27017/mern-auth-db"  
 ---
 apiVersion: v1
 kind: Service
