@@ -28,6 +28,6 @@ spec:
     app: frontend
   ports:
     - protocol: TCP
-      port: 80             # البورت الداخلي للسيرفس داخل الكلاستر
-      targetPort: 80       # البورت اللي يشغل فيه ال-nginx داخل البود
+      port: 80           
+      targetPort: 80       
       nodePort: 32000
